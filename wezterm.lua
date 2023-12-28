@@ -38,7 +38,7 @@ local function get_current_working_dir(tab)
 	local current_dir = tab.active_pane.current_working_dir
 	local HOME_DIR = string.format("file://%s", os.getenv("HOME"))
 
-	return current_dir:match(".*/(.*)/")
+	return current_dir:match(".*/(.*)")
 end
 
 
@@ -76,6 +76,7 @@ config.tab_max_width = 30
 config.font = wezterm.font_with_fallback {
   'Agave Nerd Font',
 }
+config.send_composed_key_when_right_alt_is_pressed = false
 
 
 -- and finally, return the configuration to wezterm
